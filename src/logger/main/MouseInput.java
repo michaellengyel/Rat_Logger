@@ -1,6 +1,5 @@
 package logger.main;
 
-import java.awt.Point;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -9,10 +8,6 @@ public class MouseInput implements MouseListener, MouseMotionListener{
 	
 	private Handler handler;
 	public static FileWriter fileWriter;
-	
-	private double absCenterToclickX;
-	private double absCenterToclickY;
-	private double absCenterToClick;
 	
 	
 	public MouseInput(Handler handler) {

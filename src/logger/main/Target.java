@@ -33,9 +33,9 @@ public class Target extends Entity{
 			g.drawRect(x - radius/2, y - radius/2, radius, radius);
 		}
 		
-		if(state == State.dead) {
+		else if(state == State.dead) {
 			g.setColor(new Color(255, 0, 0));
-			g.fillOval(xAdjusted, yAdjusted, radius, radius);
+			g.fillRect(x - radius/2, y - radius/2, radius, radius);
 		}
 		
 	}

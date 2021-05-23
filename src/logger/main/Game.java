@@ -10,18 +10,16 @@ import java.util.Random;
 
 public class Game extends Canvas implements Runnable{
 	
-	private static final int WIDTH = 640;
-	private static final int HEIGHT = 480;
+	private static final int WIDTH = 500;
+	private static final int HEIGHT = 500;
 	
 	private Thread thread;
 	private Boolean running = false;
 	
 	private Handler handler;
-	private Random r;
 
 	public Game() {
 		handler = new Handler();
-		r = new Random();
 
 		//this.addKeyListener(new KeyInput());
 		this.addMouseListener(new MouseInput(handler));
@@ -45,6 +43,16 @@ public class Game extends Canvas implements Runnable{
 		running = false;
 	}
 	
+	public void run() {
+		while(running) {
+			tick();
+			render();
+		}
+		stop();
+	}
+	
+	
+	/*
 	public void run() {
 		long lastTime = System.nanoTime();
 		double amountOfTicks = 60.0;
@@ -73,6 +81,7 @@ public class Game extends Canvas implements Runnable{
 		}
 		stop();
 	}
+	*/
 	
 	private void tick() {
 		handler.tick();

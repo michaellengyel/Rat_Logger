@@ -1,17 +1,16 @@
 package logger.main;
 
 import java.awt.Graphics;
-import java.awt.Point;
-import java.util.LinkedList;
 import java.util.Random;
 
 public class Handler {
 	
-	private static final int WIDTH = 640;
-	private static final int HEIGHT = 480;
+	private int WIDTH = 500;
+	private int HEIGHT = 500;
+	private int RADIUS = 30;
 	
 	private Random r = new Random();
-	Target target = new Target(r.nextInt(WIDTH), r.nextInt(HEIGHT), 30, State.alive);
+	Target target = new Target(WIDTH/2, HEIGHT/2, RADIUS, State.alive);
 
 	double currentPosX;
 	double currentPosY;
@@ -19,8 +18,8 @@ public class Handler {
 	public void tick() {
 
 		if(target.state == State.dead) {
-			target.x = r.nextInt(WIDTH);
-			target.y = r.nextInt(HEIGHT);
+			target.x = r.nextInt(WIDTH - RADIUS);
+			target.y = r.nextInt(HEIGHT - RADIUS);
 			target.state = State.alive;
 		}
 		
