@@ -52,6 +52,7 @@ public class Game extends Canvas implements Runnable{
 		double delta = 0;
 		long timer = System.currentTimeMillis();
 		int frames = 0;
+		
 		while(running) {
 			long now = System.nanoTime();
 			delta += (now - lastTime) / ns;
@@ -66,7 +67,7 @@ public class Game extends Canvas implements Runnable{
 			}
 			if(System.currentTimeMillis() - timer > 1000) {
 				timer += 1000;
-				//System.out.println("FPS: " + frames);
+				System.out.println("FPS: " + frames);
 				frames = 0;
 			}
 		}
@@ -80,13 +81,13 @@ public class Game extends Canvas implements Runnable{
 	private void render() {
 		BufferStrategy bs = this.getBufferStrategy();
 		if(bs == null) {
-			this.createBufferStrategy(3);
+			this.createBufferStrategy(2);
 			return;
 		}
 		
 		Graphics g = bs.getDrawGraphics();
 		
-		g.setColor(Color.gray);
+		g.setColor(Color.white);
 		g.fillRect(0, 0, WIDTH, HEIGHT);
 		
 		handler.render(g);

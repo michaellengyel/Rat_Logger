@@ -16,8 +16,7 @@ public class FileWriter {
 	}
 	
 	public void writeCoords(int dataX, int dataY) {
-		//formatter.format("%d%c%d%n", dataX, '\t', dataY, '\n');
-		formatter.format("%d%c%d%n", dataX, '\t', dataY, '\n');
+		formatter.format("%d%c%d%c", dataX, ';', dataY, ';');
 		formatter.flush();
 	}
 	
@@ -26,8 +25,14 @@ public class FileWriter {
 		formatter.flush();
 	}
 	
-	public void writeClick() {
-		formatter.format("%s%n", "CLICK", "\n");
+	public void writeClick(int dataX, int dataY) {
+		formatter.format("%n","\n");
+		//formatter.format("%s%d%c%d%n", "Click: ", dataX, ';', dataY, "\n");
+		formatter.flush();
+	}
+	
+	public void writeTargetCoords(int dataX, int dataY) {
+		formatter.format("%s%d%c%d%n", "Target: ", dataX, ';', dataY, "\n");
 		formatter.flush();
 	}
 	

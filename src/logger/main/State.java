@@ -5,6 +5,6 @@ public enum State {
 	growing,
 	shrinking,
 	destructing,
-	dead;
-
+	dead,
+	alive;
 }
