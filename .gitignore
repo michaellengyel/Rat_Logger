@@ -1,0 +1,11 @@
+# Directories
+.idea/
+.settings
+.metadata
+.git
+.project
+.classpath
+__pycache__/
+
+# Files
+data.txt
