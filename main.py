@@ -24,6 +24,13 @@ def split_to_dims_all(data):
     return x, y
 
 
+def normalize(data, min, max):
+    result = []
+    for point in data:
+        result.append((point - min)/(max - min))
+    return result
+
+
 def main():
 
     df = pd.read_csv(FILE_NAME, delimiter=';', header=None, names=list(range(100)), dtype=np.float32)
@@ -33,14 +40,22 @@ def main():
 
     print(data.shape, type(data[0][0]))
 
-    # x, y = split_to_dims(data[2])
-    x, y = split_to_dims_all(data)
-    print(x)
-    print(y)
+    for i in range (0, 100):
+        x, y = split_to_dims(data[i])
+        # x, y = split_to_dims_all(data)
 
-    plt.scatter(x, y)
-    plt.plot(x, y)
-    plt.show()
+        x = normalize(x, 0, 500)
+        y = normalize(y, 0, 500)
+
+        print(x)
+        print(y)
+
+        #plt.scatter(x, y, marker='.')
+        plt.plot(x, y, '-ok')
+        plt.xlim([0, 1])
+        plt.ylim([0, 1])
+
+        plt.show()
 
 
 if __name__ == "__main__":
