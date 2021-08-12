@@ -38,11 +38,10 @@ training.py (executes the training loop and saves the model)
 visualizer.py (visualized raw data)
 
 
-### Used Sources/Dependencies
-TBD
+### Demo
+![Blue(Human), Black(Machine)](/.README/Figure_1.png)  
+![Data collecting tool](/.README/logger.png)
 
-### System Dependencies:
-TBD
 
 ### TODO:
 TBD
