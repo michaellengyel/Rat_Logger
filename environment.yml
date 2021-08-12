@@ -1,0 +1,26 @@
+name: ml_env
+channels:
+  #- anaconda
+  - conda-forge
+  - defaults
+  #- pytorch
+dependencies:
+  - cudatoolkit=10.2
+  - cudnn #=8.0.4
+  - opencv
+  - numpy
+  - matplotlib
+  - torchvision==0.8.2
+  - pandas>=1.0.0
+  - scipy
+  - scikit-learn
+  - tqdm
+  - h5py==2.10.0
+  - tensorboard
+  - pip
+  - pip:
+    - torch==1.7.1+cu101
+    - torchvision==0.8.2+cu101
+    - torchaudio==0.7.2
+    - torch==1.7.1
+
